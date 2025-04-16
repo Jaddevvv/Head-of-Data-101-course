@@ -21,7 +21,6 @@ all_brands = brand_table.find_elements(By.CSS_SELECTOR, "a.anchor")
 brand_urls = [brand.get_attribute("href") for brand in all_brands]
 
 def scroll_to_bottom(driver):
-    # scroll until its not scrolling anymore
     last_height = driver.execute_script("return document.body.scrollHeight")
     while True:
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -57,13 +56,21 @@ for brand_url in brand_urls:
             products_text_split = [products_text_split[1]] + products_text_split[3::]
         elif len(products_text_split) == 7:
             products_text_split = [products_text_split[1]] +  [products_text_split[3]] + products_text_split[5::]
-            print("[POS AT 7 DEBUG]" + str(products_text_split))
         elif len(products_text_split) != 4:
-            print("[DEBUG] " + str(products_text_split))
-        elif len(products_text_split) <= 1:
+            #Insert empty price at pos 1 if not found
+            products_text_split.insert(1, "")
+    
+            # print("[BEFORE DEBUG] " + str(products_text_split))
+            #add empty price string at pos 3
+            # print("[AFTER DEBUG] " + str(products_text_split))
+        
+        # SKIP the empty lists or when names is not found
+        elif products_text_split[0] == "":
+            continue
+        elif len(products_text_split) <= 1:        
             continue
 
-        
+    
         product_details["brand"] =products_text_split[0].split("-")[-1].strip()
         product_details["name"] = products_text_split[0]
         product_details["price"] = products_text_split[1]
@@ -73,7 +80,7 @@ for brand_url in brand_urls:
 
 
 df = pd.DataFrame(all_products)
-df.to_csv("sunset_cosmeticos.csv", index=False)
+df.to_csv("../data/results/sunset_cosmeticos.csv", index=False)
 
 
 
