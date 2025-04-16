@@ -39,12 +39,12 @@ def get_imdb_top_movies():
         current_movie = {}
         try:
             splitted_values = movie.text.split("\n")
-            print(splitted_values)
             current_movie["title"] = splitted_values[0]
             current_movie["year"] = splitted_values[1]
             current_movie["duration"] = splitted_values[2]
             current_movie["rating"] = splitted_values[4]
         except:
+            # Ignore texts that are not a movie for example "about us" etc as they don't have 5 values when split by \n
             continue
 
         movies.append(current_movie)
