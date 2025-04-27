@@ -30,5 +30,5 @@ No need to click on the link everything is provided below as screenshots !
 3. Open the Jupyter notebooks in the notebooks directory and the python files in the exercises directory
 4. Run the cells to see the analysis
 
-
+## END
 Thank you for the course, it was fun and we had a lot of information and support to work on!
