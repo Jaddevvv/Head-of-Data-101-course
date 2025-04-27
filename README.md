@@ -8,7 +8,7 @@ in /notebooks
 I have made datascience + analysis project.
 
 in /exercises
-I have created all the webscrapping python files (I prefer python over Jupyter Notebooks that is why). The results have all been extracted as CSVs under /data/results.
+I have created all the webscraping python files (I prefer python over Jupyter Notebooks that is why). The results have all been extracted as CSVs under /data/results.
 
 in /sql
 I have created all the sequel files.
