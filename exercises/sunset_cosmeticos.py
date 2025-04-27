@@ -49,6 +49,7 @@ for brand_url in brand_urls:
     for product in product_table:
         product_details = {}
         products_text_split = product.text.split("\n")
+        # Handle all the cases where there is a sale, or a new item or a combo  
         if len(products_text_split) == 5:
             products_text_split = [products_text_split[0]] + products_text_split[2::]
         elif len(products_text_split) == 6:
@@ -59,11 +60,8 @@ for brand_url in brand_urls:
         elif len(products_text_split) != 4:
             #Insert empty price at pos 1 if not found
             products_text_split.insert(1, "")
-    
-            # print("[BEFORE DEBUG] " + str(products_text_split))
-            #add empty price string at pos 3
-            # print("[AFTER DEBUG] " + str(products_text_split))
-        
+
+
         # SKIP the empty lists or when names is not found
         elif products_text_split[0] == "":
             continue
