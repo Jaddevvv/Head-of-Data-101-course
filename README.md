@@ -15,6 +15,15 @@ I have created all the sequel files.
 
 BI dashboard is under this link [here](https://lookerstudio.google.com/reporting/0c849da7-9b18-4844-b1f7-3600c978cc4f) 
 
+No need to click on the link everything is provided below as screenshots ! 
+
+![BIVIZ1](bi_images/1.png)
+![BIVIZ2](bi_images/2.png)
+![BIVIZ3](bi_images/3.png)
+![BIVIZ4](bi_images/4.png)
+
+
+
 ## Getting Started
 1. Clone the repository
 2. Install dependencies: `pip install -r requirements.txt`
